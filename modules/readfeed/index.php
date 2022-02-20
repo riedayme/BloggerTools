@@ -62,11 +62,8 @@ include "template/header.php";
 										$("#result").removeClass('d-none');										
 									},
 									error: function(xhr, status, error) {
-
-										var err = eval("(" + xhr.responseText + ")");
-
-										$("#result").html(err.Message);
-
+										$("#result").html(xhr.responseText);
+										$("#result").removeClass('d-none');					
 										$(".button-submit").prop('disabled',false);
 										$(".button-spinner").remove();
 									}
